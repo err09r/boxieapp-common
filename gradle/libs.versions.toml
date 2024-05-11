@@ -1,6 +1,4 @@
 [versions]
-artifact = "0.0.1"
-
 gradleVersions = "0.51.0"
 kotlin = "1.9.24"
 kotlinx-coroutines = "1.8.1"
