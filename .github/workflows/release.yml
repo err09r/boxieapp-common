@@ -1,0 +1,48 @@
+name: Create GitHub release and run build on JitPack
+
+concurrency:
+  group: release
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths-ignore:
+      - '.github/**'
+      - '.idea/**'
+      - '.run/**'
+      - 'docs/**'
+      - 'images/**'
+      - '*.md'
+      - '.editorconfig'
+
+jobs:
+  build:
+    name: Create GitHub release and run build on JitPack
+    runs-on: ubuntu-latest
+    permissions:
+       contents: write
+    steps:
+        - uses: actions/checkout@v4.1.4
+
+        - name: Set VERSION environment variable
+          run: echo "VERSION=$(cat gradle.properties | grep artifactVersion | cut -d "=" -f2)" >> $GITHUB_ENV
+
+        - name: Set JITPACK_ARTIFACT_VERSION environment variable
+          run: echo "JITPACK_ARTIFACT_VERSION=https://jitpack.io/#${{ github.repository }}/${{ env.VERSION }}" >> $GITHUB_ENV
+            
+        - name: Create GitHub release
+          uses: ncipollo/release-action@v1.14.0
+          with:
+            name: v${{ env.VERSION }}
+            tag: ${{ env.VERSION }}
+            body: "## JitPack Release Link\n* ${{ env.JITPACK_ARTIFACT_VERSION }}\n"
+            generateReleaseNotes: true
+
+        - name: Run build on JitPack
+          # Send request multiple times to ensure that build has been triggered.
+          run: |
+            curl ${{ env.JITPACK_ARTIFACT_VERSION }}
+            sleep 10
+            curl ${{ env.JITPACK_ARTIFACT_VERSION }}
