@@ -1,4 +1,4 @@
-name: Create GitHub release and run build on JitPack
+name: Create release and publish on JitPack
 
 concurrency:
   group: release
@@ -20,7 +20,7 @@ on:
 
 jobs:
   build:
-    name: Create GitHub release and run build on JitPack
+    name: Create GitHub release and publish on JitPack
     runs-on: ubuntu-latest
     permissions:
        contents: write
