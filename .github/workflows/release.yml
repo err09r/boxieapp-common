@@ -16,6 +16,7 @@ on:
       - 'images/**'
       - '*.md'
       - '.editorconfig'
+  workflow_dispatch:
 
 jobs:
   build:
