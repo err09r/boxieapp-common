@@ -8,5 +8,5 @@ import kotlinx.serialization.Serializable
 data class ParcelRecipient(
     val title: String,
     val phoneNumber: String,
-    val email: String
+    val email: String,
 )

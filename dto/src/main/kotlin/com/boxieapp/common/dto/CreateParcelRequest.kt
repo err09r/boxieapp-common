@@ -12,5 +12,5 @@ data class CreateParcelRequest(
     val sender: String,
     val recipient: ParcelRecipient,
     val deliveryMethod: ParcelDeliveryMethod,
-    val size: ParcelSize
+    val size: ParcelSize,
 )

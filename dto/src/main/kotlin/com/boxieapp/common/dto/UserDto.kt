@@ -13,5 +13,5 @@ data class UserDto(
     val firstName: String?,
     val lastName: String?,
     val totalSent: Int,
-    val totalReceived: Int
+    val totalReceived: Int,
 )

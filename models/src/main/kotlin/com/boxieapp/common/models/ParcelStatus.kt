@@ -18,5 +18,5 @@ enum class ParcelStatus {
 
     // Return flow
     ReturnedToDepartment,
-    ReturnedToSender
+    ReturnedToSender,
 }

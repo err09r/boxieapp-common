@@ -8,13 +8,15 @@ import kotlinx.serialization.Serializable
 sealed interface ParcelDeliveryMethod {
 
     @Serializable
-    data class LockerToLocker(val lockerCode: Int) : ParcelDeliveryMethod
+    data class LockerToLocker(
+        val lockerCode: Int,
+    ) : ParcelDeliveryMethod
 
     @Serializable
     data class LockerToHome(
         val country: String,
         val postcode: Int,
         val city: String,
-        val address: String
+        val address: String,
     ) : ParcelDeliveryMethod
 }

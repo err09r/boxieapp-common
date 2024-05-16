@@ -36,3 +36,10 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Log/OS Files
+*.log
+
+# Keystore files
+*.jks
+*.keystore

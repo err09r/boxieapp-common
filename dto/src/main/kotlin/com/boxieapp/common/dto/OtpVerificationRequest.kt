@@ -8,5 +8,5 @@ import kotlinx.serialization.Serializable
 data class OtpVerificationRequest(
     val phoneNumber: String,
     val otp: String,
-    val timestamp: Long
+    val timestamp: Long,
 )

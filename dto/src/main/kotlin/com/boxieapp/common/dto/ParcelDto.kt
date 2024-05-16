@@ -11,5 +11,5 @@ data class ParcelDto(
     val lockerCode: String,
     val number: String,
     val sender: String,
-    val status: ParcelStatus
+    val status: ParcelStatus,
 )
