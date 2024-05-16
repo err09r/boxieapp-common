@@ -1,16 +1,16 @@
 .gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 ### IntelliJ IDEA ###
+*.iws
 *.iml
+*.ipr
 .idea/*
 !.idea/codeStyles
 !.idea/runConfigurations
 !.idea/icon.*[.png, .svg]
 !.idea/.name
+!.idea/externalDependencies.xml
 
 ### Eclipse ###
 .apt_generated
@@ -21,8 +21,6 @@ build/
 .springBeans
 .sts4-cache
 bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
 
 ### NetBeans ###
 /nbproject/private/
@@ -36,6 +34,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Memory snapshots
+*.hprof
 
 # Log/OS Files
 *.log
