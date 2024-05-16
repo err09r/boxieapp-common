@@ -459,7 +459,7 @@ ij_markdown_min_lines_between_paragraphs = 1
 ij_markdown_wrap_text_if_long = true
 ij_markdown_wrap_text_inside_blockquotes = true
 
-[{*.toml}]
+[*.toml]
 ij_toml_keep_indents_on_empty_lines = false
 
 [{*.yaml,*.yml}]
