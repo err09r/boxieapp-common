@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "boxieapp-common"
 
-include("dto", "models", "utils")
+include(":dto", ":models", ":utils")
