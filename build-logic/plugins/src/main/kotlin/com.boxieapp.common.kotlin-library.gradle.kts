@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     `java-library`
     kotlin("jvm")
@@ -16,8 +14,8 @@ java {
     targetCompatibility = Config.javaVersion
 }
 
-tasks.withType<KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = Config.javaVersion.toString()
+kotlin {
+    compilerOptions {
+        jvmTarget.set(Config.jvmTarget)
     }
 }
