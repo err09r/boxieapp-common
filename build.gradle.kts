@@ -6,16 +6,19 @@ plugins {
     alias(libs.plugins.gradleVersions)
 }
 
-tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
-    rejectVersionIf { isNonStable(candidate.version) }
+// https://github.com/ben-manes/gradle-versions-plugin
+tasks.withType<DependencyUpdatesTask> {
+    rejectVersionIf {
+        isStable(currentVersion) && !isStable(candidate.version)
+    }
     checkForGradleUpdate = true
     outputFormatter = "html"
     outputDir = "build/dependencyUpdates"
     reportfileName = "report"
 }
 
-private fun isNonStable(version: String): Boolean {
-    return listOf("alpha", "beta", "rc", "dev").any {
+private fun isStable(version: String): Boolean {
+    return listOf("alpha", "beta", "rc", "dev").none {
         version.contains(it, ignoreCase = true)
     }
 }
