@@ -9,6 +9,7 @@ build/
 *.ipr
 .idea/*
 !.idea/codeStyles
+!.idea/dictionaries
 !.idea/runConfigurations
 !.idea/icon.*[.png, .svg]
 !.idea/.name
